@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | CareerBypass</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0f6ff;
+      color: #003366;
+    }
+
+    header, footer {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1, footer p {
+      margin: 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #007BFF;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 15px 0;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 20px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<!-- Side Menu Toggle -->
+<style>
+  /* Hamburger Button */
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 26px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Side Menu Panel */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100%;
+    background-color: #003366;
+    color: white;
+    padding: 40px 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .side-menu.open {
+    left: 0;
+  }
+
+  .side-menu h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ffffff55;
+    padding-bottom: 10px;
+  }
+
+  .side-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+  }
+
+  .side-menu a:hover {
+    opacity: 0.8;
+  }
+
+  /* Overlay (optional) */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 999;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+</style>
+
+<!-- Menu HTML -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<div class="side-menu" id="sideMenu">
+  <h3>Navigate</h3>
+  <a href="index.html">🏠 Home</a>
+  
+  <a href="about.html">📘 About Us</a>
+  <a href="privacy.html">🔒 Privacy Policy</a>
+  <a href="terms.html">📜 Terms & Conditions</a>
+  <a href="refund.html">💸 Refund Policy</a>
+  <a href="faq.html">❓ FAQ</a>
+  <a href="contact.html">📧 Contact Us</a>
+</div>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+<!-- JS for toggle -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('menuOverlay');
+    menu.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+</script>
+
+<body>
+  <header>
+    <h1>CareerBypass</h1>
+    <p>Get your career path within minutes</p>
+  </header>
+
+  <main>
+    <h2>Privacy Policy</h2>
+    <p>Your privacy is important to us. This privacy policy outlines the types of personal information we receive and collect when you use CareerBypass, as well as how we safeguard your information.</p>
+
+    <p><strong>Information We Collect:</strong><br>
+    We collect personal information such as your name, current employment status, career goals, and email address through our form to provide you with a tailored career guide.</p>
+
+    <p><strong>How We Use Information:</strong><br>
+    Your information is used solely to generate a personalized career document and improve your user experience. We do not sell or share your information with third parties.</p>
+
+    <p><strong>Cookies:</strong><br>
+    We may use cookies to analyze user behavior and improve our services. These cookies do not store personally identifiable information.</p>
+
+    <p><strong>Security:</strong><br>
+    We implement strong security measures to protect your data against unauthorized access or alteration.</p>
+
+    <p><strong>Consent:</strong><br>
+    By using our website, you consent to the terms of this privacy policy.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CareerBypass. All rights reserved.</p>
+  </footer>
+</body>
+</html>
