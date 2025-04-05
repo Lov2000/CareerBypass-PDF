@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | CareerBypass</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0f6ff;
+      color: #003366;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      text-align: center;
+      background-color: #0056b3;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .email {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      display: inline-block;
+      color: #007BFF;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<!-- Side Menu Toggle -->
+<style>
+  /* Hamburger Button */
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 26px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Side Menu Panel */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100%;
+    background-color: #003366;
+    color: white;
+    padding: 40px 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .side-menu.open {
+    left: 0;
+  }
+
+  .side-menu h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ffffff55;
+    padding-bottom: 10px;
+  }
+
+  .side-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+  }
+
+  .side-menu a:hover {
+    opacity: 0.8;
+  }
+
+  /* Overlay (optional) */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 999;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+</style>
+
+<!-- Menu HTML -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<div class="side-menu" id="sideMenu">
+  <h3>Navigate</h3>
+  <a href="index.html">🏠 Home</a>
+  
+  <a href="about.html">📘 About Us</a>
+  <a href="privacy.html">🔒 Privacy Policy</a>
+  <a href="terms.html">📜 Terms & Conditions</a>
+  <a href="refund.html">💸 Refund Policy</a>
+  <a href="faq.html">❓ FAQ</a>
+  <a href="contact.html">📧 Contact Us</a>
+</div>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+<!-- JS for toggle -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('menuOverlay');
+    menu.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+</script>
+
+<body>
+
+  <header>
+    <h1>CareerBypass</h1>
+    <p>Get your career path within minutes</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="refund.html">Refund Policy</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Contact Us</h2>
+    <p>We’re here to help and answer any questions you might have. We look forward to hearing from you.</p>
+    <p>For any queries, suggestions, or support — feel free to reach out via email:</p>
+    <p class="email">📧 careerbypass@gmail.com</p>
+  </main>
+
+  <footer>
+    &copy; 2025 CareerBypass. All rights reserved.
+  </footer>
+
+</body>
+</html>

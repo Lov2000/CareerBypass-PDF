@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Payment | CareerBypass</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f9ff;
+      color: #003366;
+    }
+
+    header {
+      background-color: #007BFF;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .container h2 {
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .price-box {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 10px;
+      font-weight: normal;
+      font-size: 20px;
+    }
+
+    .final-price {
+      color: #28a745;
+    }
+
+    .payment-desc {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    ul {
+      text-align: left;
+      max-width: 500px;
+      margin: 20px auto;
+      color: #003366;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CareerBypass</h1>
+    <p>Secure Payment</p>
+  </header>
+
+  <div class="container">
+    <h2>Unlock Your Personalized Career Plan</h2>
+    <p class="price-box">
+      <span class="original-price">₹2999</span>
+      <span class="final-price">Now Only ₹799</span>
+    </p>
+    <p class="payment-desc">
+      You're just one step away from transforming your career journey. This one-time payment gives you access to:
+    </p>
+    <ul>
+      <li>✅ A complete personalized career roadmap tailored to your goals</li>
+      <li>✅ Weekly step-by-step task list for consistent growth</li>
+      <li>✅ Curated list of courses, tools, and resources</li>
+      <li>✅ Salary growth strategies and insider industry tips</li>
+    </ul>
+
+    <!-- Button to start the payment process -->
+    <button type="button" onclick="initiatePayment()">Proceed to Payment</button>
+  </div>
+
+  <footer>
+    &copy; 2025 CareerBypass. All rights reserved.
+  </footer>
+
+  <!-- Cashfree Checkout Script -->
+  <script src="https://checkout.cashfree.com/checkout.js"></script>
+
+  <script>
+    function initiatePayment() {
+      const appId = "TEST10546480b98a4c93f4ff41332de208464501";  // Cashfree App ID (sandbox)
+      const secretKey = "cfsk_ma_test_c7c29ce24ecbcea67676dc0b267ec81f_9a40e709"; // Cashfree Secret Key (sandbox)
+
+      const orderDetails = {
+        "order_id": "order123",  // Use a unique order ID for each transaction
+        "order_amount": 799,     // The amount for the transaction
+        "order_currency": "INR", // The currency
+        "customer_email": "customer@example.com",  // Use actual customer email
+        "customer_phone": "9999999999"  // Use actual customer phone number
+      };
+
+      // Prepare payment data to pass to Cashfree
+      const paymentData = {
+        "app_id": appId,
+        "secret_key": secretKey,
+        "order_id": orderDetails.order_id,
+        "order_amount": orderDetails.order_amount,
+        "order_currency": orderDetails.order_currency,
+        "customer_email": orderDetails.customer_email,
+        "customer_phone": orderDetails.customer_phone,
+        "order_note": "Payment for CareerBypass Personalized Career Guide",
+        "return_url": "https://yourwebsite.com/return", // Replace with your actual return URL
+        "notify_url": "https://yourwebsite.com/notify"  // Replace with your actual notify URL
+      };
+
+      // Call Cashfree Checkout
+      Cashfree.checkout(paymentData).then(function(response) {
+        if (response.status === "success") {
+          alert("Payment successful!");
+        } else {
+          alert("Payment failed: " + response.message);
+        }
+      }).catch(function(error) {
+        console.error("Error:", error);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareerBypass | Get your career path within minutes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f6ff;
+      color: #003366;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    form, #generated-content {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    #other-industry-field {
+      display: none;
+    }
+
+    button {
+      margin-top: 30px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #generated-content {
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #218838;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      form, #generated-content {
+        padding: 20px;
+        margin: 20px 10px;
+      }
+
+      input, select, textarea {
+        font-size: 0.95rem;
+        padding: 10px;
+      }
+
+      button, .cta-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 26px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100%;
+    background-color: #003366;
+    color: white;
+    padding: 40px 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .side-menu.open {
+    left: 0;
+  }
+
+  .side-menu h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ffffff55;
+    padding-bottom: 10px;
+  }
+
+  .side-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+  }
+
+  .side-menu a:hover {
+    opacity: 0.8;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 999;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+</style>
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<div class="side-menu" id="sideMenu">
+  <h3>Navigate</h3>
+  <a href="index.html">🏠 Home</a>
+  <a href="about.html">📘 About Us</a>
+  <a href="privacy.html">🔒 Privacy Policy</a>
+  <a href="terms.html">📜 Terms & Conditions</a>
+  <a href="refund.html">💸 Refund Policy</a>
+  <a href="faq.html">❓ FAQ</a>
+  <a href="contact.html">📧 Contact Us</a>
+</div>
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('menuOverlay');
+    menu.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+</script>
+
+<body>
+  <header>
+    <h1>CareerBypass</h1>
+    <p>Get your career path within minutes</p>
+  </header>
+
+  <form id="career-form">
+    <label>Name* <input type="text" name="name" id="name-input" required></label>
+    <label>Industry*
+      <select name="industry" id="industry-select" required>
+        <option value="Technology">Technology</option>
+        <option value="Finance">Finance</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Education">Education</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Others">Others</option>
+      </select>
+    </label>
+    <div id="other-industry-field">
+      <label>Please specify your industry <input type="text" id="other-industry-input"></label>
+    </div>
+    <label>Current Employment Status*
+      <select required>
+        <option>Full-time</option>
+        <option>Part-time</option>
+        <option>Unemployed</option>
+      </select>
+    </label>
+    <label>Current Designation* <input type="text" required></label>
+    <label>Current Salary per year* <input type="text" required></label>
+    <label>Desired Salary <input type="text"></label>
+    <label>Desired Designation <input type="text"></label>
+    <label>Desired Industry <input type="text"></label>
+    <label>Other Information <textarea rows="4"></textarea></label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="generated-content">
+    <h2>Your Career Guide</h2>
+    <p><strong>Hi <span id="insert-name"></span>,</strong> congratulations on taking the first step!</p>
+    <p><strong>Based on your current status, your desired goals are not only achievable, but well within reach with the right guidance, mindset, and consistency.</strong></p>
+    <p><strong>What's possible?</strong><br>
+      Many professionals from your background — whether it’s in <span id="insert-industry">your field</span> or beyond — have made similar transitions. What truly matters is your willingness to learn, adapt, and follow a strategic path forward.
+    </p>
+    <p><strong>How to move ahead:</strong><br>
+      - Start by deepening your knowledge in the core areas of your target industry.<br>
+      - Build a strong portfolio or certifications if needed.<br>
+      - Improve your networking game — LinkedIn is your friend.<br>
+      - Tailor your resume to reflect transferable skills.<br>
+      - Start applying proactively while improving continuously.
+    </p>
+    <p><strong>Encouragement:</strong><br>
+      You are not alone in this journey — many have successfully pivoted their careers. The fact that you’re here shows your intent. With discipline and the right plan, you can fast-track your growth.
+    </p>
+    <p><strong>Want the full roadmap?</strong><br>
+      Our complete 5000-word AI-crafted guide includes a personalized plan, weekly tasks, a curated course list, job platforms, salary growth strategies, and a structured 3–12 month timeline.
+    </p>
+    <p><strong>Don’t leave your dream career to chance.</strong> Let CareerBypass be your companion with a proven action plan!</p>
+    <a class="cta-button" href="sales.html">💼 Get My Full Career Guide →</a>
+  </div>
+
+  <script>
+    const industrySelect = document.getElementById("industry-select");
+    const otherField = document.getElementById("other-industry-field");
+    const otherInput = document.getElementById("other-industry-input");
+    const nameInput = document.getElementById("name-input");
+
+    industrySelect.addEventListener("change", function () {
+      if (industrySelect.value === "Others") {
+        otherField.style.display = "block";
+      } else {
+        otherField.style.display = "none";
+      }
+    });
+
+    document.getElementById("career-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const selectedIndustry = industrySelect.value;
+      const customIndustry = otherInput.value.trim();
+      const finalIndustry = selectedIndustry === "Others" && customIndustry !== "" ? customIndustry : selectedIndustry;
+      const name = nameInput.value.trim();
+
+      document.getElementById("insert-industry").textContent = finalIndustry;
+      document.getElementById("insert-name").textContent = name;
+      document.getElementById("generated-content").style.display = "block";
+      document.getElementById("career-form").style.display = "none";
+    });
+  </script>
+
+  <footer style="background-color:#003366; color: white; padding: 30px 20px; text-align: center; margin-top: 60px; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+    <p style="margin-bottom: 20px; font-size: 18px; font-weight: bold;">CareerBypass</p>
+    <nav style="margin-bottom: 20px;">
+      <a href="about.html" style="color: white; margin: 0 10px; text-decoration: none;">About Us</a> |
+      <a href="contact.html" style="color: white; margin: 0 10px; text-decoration: none;">Contact Us</a> |
+      <a href="privacy.html" style="color: white; margin: 0 10px; text-decoration: none;">Privacy Policy</a> |
+      <a href="terms.html" style="color: white; margin: 0 10px; text-decoration: none;">Terms of Service</a> |
+      <a href="refund.html" style="color: white; margin: 0 10px; text-decoration: none;">Refund Policy</a> |
+      <a href="faq.html" style="color: white; margin: 0 10px; text-decoration: none;">FAQ</a>
+    </nav>
+    <p style="font-size: 14px;">&copy; 2025 CareerBypass. All rights reserved.</p>
+  </footer>
+</body>
+</html>
