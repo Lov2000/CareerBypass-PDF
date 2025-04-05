@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareerBypass | Your Personalized Career Guide</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4faff;
+      color: #003366;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.4s; }
+    .section:nth-child(4) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #0056b3;
+    }
+
+    .pricing {
+      text-align: center;
+      background-color: #e8f1ff;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-left: 10px;
+      font-size: 1.2rem;
+    }
+
+    .buy-button {
+      margin-top: 25px;
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .price { font-size: 2rem; }
+      .buy-button { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CareerBypass</h1>
+  <p>Get your career path within minutes</p>
+</header>
+
+<div class="container">
+  <div class="section">
+    <h2>📘 What’s Inside the Guide?</h2>
+    <ul>
+      <li><strong>Step-by-step guide:</strong> A clear roadmap from your current position to your dream role.</li>
+      <li><strong>Personalized action points:</strong> Specific, actionable tasks tailored to your goals.</li>
+      <li><strong>Top learning resources:</strong> Best platforms, free/paid courses, and tools you should use.</li>
+      <li><strong>Weekly task planner:</strong> A week-by-week breakdown of what to focus on.</li>
+      <li><strong>Salary growth strategies:</strong> Practical tips to improve income in your industry.</li>
+      <li><strong>Career shift timelines:</strong> Realistic milestones based on your profile and ambition.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📈 Who is this for?</h2>
+    <p>If you're stuck in your current job, unsure about your next step, or looking to break into a better role or industry — this guide is made for you.</p>
+  </div>
+
+  <div class="section pricing">
+    <h2>🎁 Limited Time Offer</h2>
+    <p class="price">₹799 <span class="old-price">₹2999</span></p>
+    <p>You’ll receive a 5000+ word personalized PDF guide instantly after payment.</p>
+    <a class="buy-button" href="payment.html">💳 Get My Guide Now</a>
+  </div>
+</div>
+
+<footer style="background-color:#003366; color: white; padding: 30px 20px; text-align: center; margin-top: 60px; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+  <p style="margin-bottom: 20px; font-size: 18px; font-weight: bold;">CareerBypass</p>
+  <nav style="margin-bottom: 20px;">
+    <a href="about.html" style="color: white; margin: 0 10px; text-decoration: none;">About Us</a> |
+    <a href="contact.html" style="color: white; margin: 0 10px; text-decoration: none;">Contact Us</a> |
+    <a href="privacy.html" style="color: white; margin: 0 10px; text-decoration: none;">Privacy Policy</a> |
+    <a href="terms.html" style="color: white; margin: 0 10px; text-decoration: none;">Terms of Service</a> |
+    <a href="refund.html" style="color: white; margin: 0 10px; text-decoration: none;">Refund Policy</a> |
+    <a href="faq.html" style="color: white; margin: 0 10px; text-decoration: none;">FAQ</a>
+  </nav>
+  <p style="font-size: 14px;">&copy; 2025 CareerBypass. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
